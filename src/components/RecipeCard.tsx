@@ -11,7 +11,7 @@ function RecipeCard({ recipe }: Props) {
 
   return (
     <div className="recipe-card">
-      <img src={process.env.PUBLIC_URL + `/images/${recipe.image}`} alt={recipe.image} className="w-full h-40 object-cover" />
+      <img src={`${process.env.PUBLIC_URL}/images/${recipe.image}`} alt={recipe.image} className="w-full h-40 object-cover" />
       <h2>{recipe.name}</h2>
 
       {/* 👇 الزر */}
