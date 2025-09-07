@@ -1,0 +1,130 @@
+
+/* 🌌 خلفية متحركة بالألوان */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✨ أيقونات الطبخ المتحركة */
+.kitchen-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ما تخليها تعيق الضغط */
+  z-index: 0;
+  overflow: hidden;
+}
+
+.kitchen-icons span {
+  position: absolute;
+  display: block;
+  font-size: 28px;
+  opacity: 0.7;
+  animation: floatIcons 20s linear infinite;
+  color: rgba(255,255,255,0.8);
+}
+
+@keyframes floatIcons {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.recipe-card {
+  background-color:#fff ;
+  border: 2px solid #fff ;
+  border-radius: 12px ;
+  padding: 16px ;
+  width: 250px;
+  height: auto;
+  margin: 12px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s , box-shadow 0.3s ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+}
+.recipe-card img {
+  width: 60%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+
+}
+.recipe-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.recipe-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.recipe-card button {
+  background-color: #ff7f50;
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease , transfom 0.1s ease;
+  outline: none;
+
+}
+.recipe-card button:hover { 
+  background-color: #ff6333;
+
+
+}
+.recipe-card button:active {
+  background-color: #e65c2c;
+  transform: scale(0.95);
+
+}
+.recipes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .recipes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .recipes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
